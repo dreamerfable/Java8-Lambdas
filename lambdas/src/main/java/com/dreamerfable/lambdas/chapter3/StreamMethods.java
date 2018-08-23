@@ -11,6 +11,8 @@ import java.util.stream.Stream;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.dreamerfable.lambdas.domain.Planet;
+
 /**
  * 书中提到的常用的Stream方法练习
  * 
@@ -62,41 +64,6 @@ public class StreamMethods {
 		List<Integer> actual = Stream.of(source1, source2).flatMap(numbers -> numbers.stream())
 				.collect(Collectors.toList());
 		assertEquals(expected, actual);
-	}
-
-	class Planet {
-
-		String name;
-
-		long size;
-
-		public Planet(String name, long size) {
-			super();
-			this.name = name;
-			this.size = size;
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public long getSize() {
-			return size;
-		}
-
-		public void setSize(long size) {
-			this.size = size;
-		}
-
-		@Override
-		public String toString() {
-			return "planet [name=" + name + ", size=" + size + "]";
-		}
-
 	}
 
 	@Test
